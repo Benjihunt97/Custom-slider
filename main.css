@@ -1,0 +1,42 @@
+.slider-track {
+  --__barWidth: 0;
+  
+  position: relative;
+  
+  width: 250px;
+  height: 10px;
+  
+  background: #ddd;
+  border-radius: 100vw;
+  box-shadow: 2px 2px 12px 1px rgba(100, 100, 100, 0.15);
+}
+
+.slider-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  
+  width: var(--__barWidth);
+  height: inherit;
+  
+  background: #156B95;
+  border-radius: 100vw;
+}
+
+.slider-ball {
+  --__ballSize: 18px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  /* calculate left for the ball */
+  left: var(--__barWidth);
+  
+  width: var(--__ballSize);
+  aspect-ratio: 1;
+  
+  background: #1394D3;
+  border: 3px solid white;
+  border-radius: 100vw;
+  box-shadow: 0 0 4px 2px rgba(100, 100, 100, 0.25);
+}
