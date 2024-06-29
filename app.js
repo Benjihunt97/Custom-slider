@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const valueDisplay = document.getElementById('valueDisplay');
     const slider = document.querySelector('.slider-track');
     const sliderBar = slider.querySelector('.slider-bar');
     const sliderBall = slider.querySelector('.slider-ball');
@@ -41,6 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
             progressWidth = (newWidth / sliderRect.width) * 100;
             slider.style.setProperty('--__barWidth', progressWidth + '%');
             sliderBall.style.left = `calc(${progressWidth}% - 10px)`; // Adjusted to keep the ball centered
+
+            // Update the displayed value
+            valueDisplay.innerHTML = Math.round(progressWidth);
         }
     }
 
@@ -57,6 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
             progressWidth = (newWidth / sliderRect.width) * 100;
             slider.style.setProperty('--__barWidth', progressWidth + '%');
             sliderBall.style.left = `calc(${progressWidth}% - 10px)`; // Adjusted to keep the ball centered
+
+            // Update the displayed value
+            valueDisplay.innerHTML = Math.round(progressWidth);
         }
     }
 
@@ -72,4 +79,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize the ball position based on the default progress width
     sliderBall.style.left = `calc(${progressWidth}% - 10px)`; // Adjusted to keep the ball centered
+    valueDisplay.innerHTML = Math.round(progressWidth); // Initial value display
 });
